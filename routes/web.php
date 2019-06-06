@@ -11,6 +11,22 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+    Route::get("/",[
+        "as"   => "web.index",
+        "uses" => "WebController@index"
+    ]);
+
+    Route::get("/productos",[
+        "as"   => "web.productos",
+        "uses" => "WebController@productos"
+    ]);
+
+    Route::get("/contacto",[
+        "as"   => "web.contacto",
+        "uses" => "WebController@contacto"
+    ]);
+
+    Route::get("/galeria",[
+        "as"   => "web.galeria",
+        "uses" => "WebController@galeria"
+    ]);

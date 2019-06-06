@@ -14,14 +14,14 @@ class ProductosSeeder extends Seeder
     {
         $faker = Faker::create();
 
-        $nproductos = array("Baby Cat Milk","Indoor Intense Hairball 34","Persian","Babydog Milk","Bulldog","Giant Adult","Giant Puppy","Miniature Schnauzer Puppy","Starter Mousse","Bebedero","Comedero",
+        $nproductos = array("","Baby Cat Milk","Indoor Intense Hairball 34","Persian","Babydog Milk","Bulldog","Giant Adult","Giant Puppy","Miniature Schnauzer Puppy","Starter Mousse","Bebedero","Comedero",
             "Comedor Multi Feeder","Correa Para Perros","Jugete","Pelota Para Perros");
 
 
 
 
 
-        for($i = 1; $i<= 14;$i++):
+        for($i = 1; $i<= 15;$i++):
         DB::table("Productos")->insert
         ([
 

@@ -11,6 +11,11 @@ class Producto extends Model
 
     public function TipoProducto()
     {
-        return $this->belongsTo(TipoProducto::class);
+        return $this->belongsTo(TipoProducto::class,"tipo_productos_id");
     }
+
+    public function Compras(){
+        return $this->belongsToMany(Cliente::class,"compras","productos_id","clientes_id");
+    }
+
 }
