@@ -15,8 +15,8 @@ return [
     */
 
     'mailgun' => [
-        'domain' => env('MAILGUN_DOMAIN'),
-        'secret' => env('MAILGUN_SECRET'),
+        'domain' => ('sandbox4d195b42c8914d44a536e8c191a91c35.mailgun.org'),
+        'secret' => ('fd296a0a5074ff7dfbda4680294b73d3-87cdd773-52c998f5'),
         'endpoint' => env('MAILGUN_ENDPOINT', 'api.mailgun.net'),
     ],
 
@@ -43,5 +43,9 @@ return [
             'tolerance' => env('STRIPE_WEBHOOK_TOLERANCE', 300),
         ],
     ],
+
+    1
+
+
 
 ];

@@ -7,6 +7,8 @@ use App\Models\Producto;
 
 class WebController extends Controller
 {
+
+
     public function index()
     {
         return view("web.index");
@@ -24,4 +26,15 @@ class WebController extends Controller
         $productos = Producto::all()->groupBy("tipoProducto.nombre");
         return view("web.productos", compact("productos"));
     }
+
+    public function register()
+    {
+        return view ("web.register");
+    }
+
+    public function login()
+    {
+        return view ("web.login");
+    }
+
 }

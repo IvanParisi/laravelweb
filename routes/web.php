@@ -30,3 +30,27 @@
         "as"   => "web.galeria",
         "uses" => "WebController@galeria"
     ]);
+
+    Route::get("/registro",[
+        "as"   => "web.register",
+        "uses" => "WebController@register"
+    ]);
+
+    Route::get("/login",[
+        "as"   => "web.login",
+        "uses" => "WebController@login"
+    ]);
+
+    Route::group(["prefix" => "/panel"],function ()
+    {
+
+
+        Route::get("/", [
+            "as" => "panel.index",
+            "uses" => "PanelController@index"
+        ]);
+    });
+
+Auth::routes();
+
+

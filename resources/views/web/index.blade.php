@@ -1,86 +1,11 @@
-<?php
-include_once("arrays.php");
-include_once("funcion.php");
+@php
+    include_once("arrays.php");
+    include_once("funcion.php");
+@endphp
 
+@extends("web.template")
 
-
-
-?>
-
-    <!DOCTYPE html>
-
-<html lang="es">
-<head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="ription" content="Venta de alimentos para mascotas">
-    <meta name="author" content="Ivan Parisi">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-    <title>DameLaPata</title>
-
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link href="js/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link href="css/shop-homepage.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/estilo.css">
-    <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
-
-</head>
-
-<body>
-<a href="index.php?page=1"></a>
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark colorbarra fixed-top" method="get">
-    <div class="container">
-
-        <a class="navbar-brand logo" href="index.php?page=1">Dame la pata</a>
-        <img src="img/prueba.jpg" class="img-fluid|thumbnail rounded-top|rounded-right|rounded-bottom|rounded-left|rounded-circle|" alt="">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto navbar-brand">
-
-                <li class="nav-item">
-                    <a class="nav-link" href=" {{ route("web.index") }} ">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route("web.productos") }}">Productos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route("web.contacto") }}">Contacto</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route("web.galeria") }}">Galeria</a>
-                </li>
-                <li class="nav-item pepe" >
-
-                </li>
-
-
-
-            </ul>
-
-            <ul class="navbar-nav  navbar-brand">
-                <li class="nav-item">
-                    <a href="index.php?page=5" class="nav-link">Registro</a>
-
-                </li>
-                <li class="nav-item">
-                    <a href="index.php?page=6" class="nav-link">Ingresar</a></li>
-            </ul>
-
-
-
-        </div>
-
-    </div>
-</nav>
-
-
+@section("contenido")
 <!-- Page Content -->
 <div class="container margen">
 
@@ -185,23 +110,8 @@ include_once("funcion.php");
         </div>
     </div>
 </div>
-<
+<@endsection
 
 
 
 
-<!-- Footer -->
-<footer class="py-5 bg-dark footer ">
-    <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Ivan Parisi</p>
-    </div>
-    <!-- /.container -->
-</footer>
-
-<!-- Bootstrap core JavaScript -->
-<script src="js/jquery/jquery.min.js"></script>
-<script src="js/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-</body>
-
-</html>
