@@ -44,12 +44,16 @@
     Route::group(["prefix" => "/panel"],function ()
     {
 
+        Route::get('/', 'PanelController@admin')
+            ->middleware('isAdmin')
+            ->name('panel');
 
-        Route::get("/", [
-            "as" => "panel.index",
-            "uses" => "PanelController@index"
-        ]);
+
+
+        Route::resource("/productos","ProductosController")->middleware('isAdmin');
     });
+
+
 
 Auth::routes();
 

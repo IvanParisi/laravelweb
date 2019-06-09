@@ -1,8 +1,16 @@
 @php
     include_once("arrays.php");
     include_once("funcion.php");
-@endphp
 
+
+@endphp
+@if(isset(Auth::user()->user))
+@if( Auth::user()->user  == 'Admin')
+    @php
+    \Illuminate\Support\Facades\Redirect::to(  route(panel.index) );
+    @endphp
+@endif
+@endif
 @extends("web.template")
 
 @section("contenido")
@@ -35,7 +43,7 @@
                         <img class="img-responsive" src="img/gato.png" alt="Gato">
                         <div class="overlay">
                             <h2>Nutricion para tu gato</h2>
-                            <a class="info" href="index.php?page=2&#gatos">Productos</a>
+                            <a class="info" href="{{ route("web.productos") }}">Productos</a>
                         </div>
                     </div>
                 </div>
@@ -44,7 +52,7 @@
                         <img class="img-responsive" src="img/perro.png" alt="Gato">
                         <div class="overlay">
                             <h2>Nutricion para tu perro</h2>
-                            <a class="info" href="index.php?page=2&#perro">Productos</a>
+                            <a class="info" href="{{ route("web.productos") }}">Productos</a>
                         </div>
                     </div>
                 </div>

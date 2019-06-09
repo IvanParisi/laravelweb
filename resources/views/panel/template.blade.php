@@ -5,7 +5,7 @@ include_once("arrays.php");
 @endphp
 <html lang="es">
 <head>
-
+    <base href="{{ asset("/") }}">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="ription" content="Venta de alimentos para mascotas">
@@ -26,13 +26,12 @@ include_once("arrays.php");
 </head>
 
 <body>
-<a href="{{ route("web.index") }}"></a>
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark colorbarra fixed-top" method="get">
+<nav class="navbar navbar-expand-lg navbar-dark colorbarrap fixed-top" method="get">
     <div class="container">
 
-        <a class="navbar-brand logo" href="{{ route("web.index") }}">Dame la pata</a>
-        <img src="img/prueba.jpg" class="img-fluid|thumbnail rounded-top|rounded-right|rounded-bottom|rounded-left|rounded-circle|" alt="">
+        <a class="navbar-brand logo" href="{{ route("panel") }}">Panel</a>
+        <img src="img/panel.png" class="img-fluid|thumbnail rounded-top|rounded-right|rounded-bottom|rounded-left|rounded-circle|" alt="">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -40,8 +39,24 @@ include_once("arrays.php");
             <ul class="navbar-nav ml-auto navbar-brand">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Productos</a>
+                    <a class="nav-link" href="{{ route('panel') }}">Inicio</a>
+
                 </li>
+
+                <li class="nav-item dropdown">
+
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        Productos <span class="caret"></span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('productos.index') }}">Lista</a>
+                            <a class="dropdown-item" href="{{ route('productos.create') }}">Cargar</a>
+
+
+                    </div>
+                </li>
+
                 <li class="nav-item">
                     <a class="nav-link" href="#">Usuarios</a>
 
