@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Producto;
 use App\Models\TipoProducto;
 use Illuminate\Http\Request;
+use mysql_xdevapi\Session;
 
 class ProductosController extends Controller
 {
@@ -46,6 +47,11 @@ class ProductosController extends Controller
     {
         $datos = $request->all();
 
+        if(Producto::create($datos)):
+            return redirect()->route("productos.index");
+        else:
+            return redirect()->back();
+        endif;
     }
 
     /**
@@ -89,7 +95,8 @@ class ProductosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
-        //
-    }
+{
+    Producto::destroy($id);
+    return redirect()->route("productos.index")->with('message','Producto eliminado con exito');
+}
 }

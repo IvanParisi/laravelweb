@@ -2,10 +2,15 @@
 
 @section('contenido')
     <div class="container">
+
+        @if(Session::has('message'))
+            <p class="alert alert-success margen">{{ Session::get('message') }}</p>
+        @endif
+
         <div class="row mt-3">
     <div class="col-12">
-
         <table class="table mt-5">
+
             <thead>
             <tr>
                 <th>Nombre</th>
@@ -27,16 +32,17 @@
                 <div class="row">
                     <td>
                         <div class="btn-group">
-                            <form action="#" method="post">
-                                <input type="hidden" value="" name="idbd">
-                                <input type="hidden" value="" name="tipo">
-                                <button type="submit" class="btn btn-sm btn-danger disabled" disabled>Eliminar</button>
+
+                            <form action="{{ route('productos.destroy',[$producto->id])}} " method="POST">
+                                @csrf
+                                <input type="hidden" value="DELETE" name="_method">
+                                <button type="submit" class="btn btn-sm btn-danger ">Eliminar</button>
                             </form>
                             <form action="#" method="post">
                                 <input type="hidden" value="" name="imagen">
                                 <input type="hidden" value="" name="idbd">
                                 <input type="hidden" value="" name="tipo">
-                                <button type="submit" class="btn btn-sm btn-primary ml-1 disabled " disabled> Editar</button>
+                                <button type="submit" class="btn btn-sm btn-primary ml-1 bdisabled " disabled> Editar</button>
                             </form>
                         </div>
                     </td>

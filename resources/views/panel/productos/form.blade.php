@@ -9,6 +9,8 @@
 
                     <div class="col-6 offset-3">
                         <form action="{{ route("productos.store") }}" enctype="multipart/form-data" method="POST" class="bg-light p-3">
+
+                            @csrf
                             <div class="form-group">
                                 <label for="nombre">Nombre</label>
                                 <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Ingrese el nombre">
@@ -25,12 +27,6 @@
 
                             </div>
 
-                            <div class="form-group">
-                                <label for="imagen">Foto</label>
-
-                                <input type="file" accept="image/jpg" class="form-control-file" name="imagen" id="imagen" placeholder="" aria-describedby="help_imagen">
-                                <small id="help_imagen" class="form-text text-muted">La imágen del producto debe ser en formato jpg y pesar menos de 2mb</small>
-                            </div>
 
                             <div class="form-group">
                                 <label for="number">Tipo de Producto</label>

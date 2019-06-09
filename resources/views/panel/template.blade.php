@@ -23,6 +23,7 @@ include_once("arrays.php");
     <link rel="stylesheet" href="css/panel.css">
     <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
 
+
 </head>
 
 <body>
@@ -58,7 +59,7 @@ include_once("arrays.php");
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Usuarios</a>
+                    <a class="nav-link" href="{{ route('panel') }}">Usuarios</a>
 
                 </li>
                 <li class="nav-item">
