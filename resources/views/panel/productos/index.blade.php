@@ -3,13 +3,13 @@
 @section('contenido')
     <div class="container">
 
-        @if(Session::has('message'))
-            <p class="alert alert-success margen">{{ Session::get('message') }}</p>
+        @if(Session::has('ok'))
+            <p class="alert alert-success margen">{{ Session::get('ok') }}</p>
         @endif
 
         <div class="row mt-3">
     <div class="col-12">
-        <table class="table mt-5">
+        <table class="table  mt-5">
 
             <thead>
             <tr>
@@ -18,7 +18,9 @@
                 <th>Precio</th>
                 <th>Imagen</th>
                 <th>Accion</th>
+
             </tr>
+
             </thead>
             <tbody>
 
@@ -26,7 +28,7 @@
             @forelse($productos as $producto)
             <tr>
                 <td>{{$producto->nombre}}</td>
-                <td>{{$producto->descripcion}}</td>
+                <td height="100">{{ $producto->descripcion }}</td>
                 <td>${{$producto->precio}}</td>
                 <td><img src="{{$producto->imagen}}" alt="{{$producto->nombre}}" width="50"></td>
                 <div class="row">
@@ -38,12 +40,7 @@
                                 <input type="hidden" value="DELETE" name="_method">
                                 <button type="submit" class="btn btn-sm btn-danger ">Eliminar</button>
                             </form>
-                            <form action="#" method="post">
-                                <input type="hidden" value="" name="imagen">
-                                <input type="hidden" value="" name="idbd">
-                                <input type="hidden" value="" name="tipo">
-                                <button type="submit" class="btn btn-sm btn-primary ml-1 bdisabled " disabled> Editar</button>
-                            </form>
+                                <a type="submit" class="btn btn-sm btn-primary ml-1 " href="{{ route('productos.edit',[$producto->id])}}"> Editar</a>
                         </div>
                     </td>
                 </div>

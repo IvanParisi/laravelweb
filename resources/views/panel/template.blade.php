@@ -88,7 +88,6 @@ include_once("arrays.php");
 <!-- Bootstrap core JavaScript -->
 <script src="js/jquery/jquery.min.js"></script>
 <script src="js/bootstrap/js/bootstrap.bundle.min.js"></script>
-
 </body>
 
 </html>
