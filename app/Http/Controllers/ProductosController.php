@@ -56,7 +56,7 @@ class ProductosController extends Controller
             $datos["imagen"] =  "img/$nombre";
         endif;
         if(Producto::create($datos)):
-            return redirect()->route("productos.index")->with("ok","Producto creado por exito");
+            return redirect()->route("productos.index")->with("ok","Producto creado con exito");
         else:
             return redirect()->back()->withInput()->withErrors("No se pudo cargar");
         endif;
