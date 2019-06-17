@@ -3,11 +3,11 @@
 @section('contenido')
 
     <div id="fullscreen_bg" class="fondo">
+
         <div class="row">
             <div class="col-6 offset-3 margenlog">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
-
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf

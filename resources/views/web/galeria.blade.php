@@ -32,7 +32,7 @@
                 <p class="margen">
                     🐱Este es un lugar, donde la gente puede subir la imagen de su mascota
                     y compartirla con los demás!.🐶 </p>
-                <p class="center-block btn btn-outline-primary "><a href="index.php?page=8">Subi la tuya!</a></p>
+                <p class="center-block btn btn-outline-primary "><a href="{{ route("web.galeria")}}">Subi la tuya!</a></p>
                 <br>
                 <small id="help_descripcion" class="text-muted">Es necesario estar registrado.</small>
             </div>
@@ -55,7 +55,7 @@
                             </a>
                             <div class="card-body">
                                 <h6>///NOMBRRE</h6>
-                                <p class="text-muted card-text">//DESCRIPCION</p>
+                                <p class="text-muted card-text">///DESCRIPCION</p>
                             </div>
                             <small id="help_descripcion" class="text-muted">Subida por el usuario: ///USUARIO</small>
                         </div>

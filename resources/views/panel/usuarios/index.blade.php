@@ -7,7 +7,7 @@
     @endif
 
 
-    <body id="fullscreen_bg" class="fondo">
+    <body id="fullscreen_bg" class="fondo2">
         <div class="container margen align-content-center">
             <body class="row">
                 <div class="col-md-12">

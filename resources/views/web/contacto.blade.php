@@ -35,14 +35,14 @@
             endif;
 
             ?>
-            <div class="alert alert-info" role="alert">
+            <div class="alert alert-danger" role="alert">
                 <h4 class="alert-heading"></h4>
-                <strong>Atento!</strong> <p> Todos los campos son obligatorios!!</p>
+                <strong>FALTA IMPLEMENTAR SECCION CONTACTO</strong>
                 <p class="mb-0"></p>
             </div>
             <form action="html/procesardatos.php" method="post">
 
-                <input type="text" class="form-control" name="nombre" placeholder="Nombre..." /><br />
+                <input type="text" class="form-control " name="nombre" placeholder="Nombre..." /><br />
                 <input type="text" class="form-control" name="apellido" placeholder="Apellido..." /><br />
                 <input type="text" class="form-control" name="email" placeholder="E-mail..." /><br />
                 <textarea type="text" class="form-control" name="texto" placeholder="En que lo podemos ayudar?" style="height:150px;"></textarea><br />
@@ -73,7 +73,7 @@
                         Conejo
                     </label>
                 </div>
-                <input class="btn btn-primary mb-2" type="submit" value="Enviar" /><br /><br />
+                <input class="btn btn-primary mb-2 " type="submit" value="Enviar" disabled/><br /><br />
 
 
 
