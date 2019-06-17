@@ -36,9 +36,9 @@
                         <div class="btn-group">
 
                             <form action="{{ route('productos.destroy',[$producto->id])}} " method="POST">
-                                @csrf
-                                <input type="hidden" value="DELETE" name="_method">
-                                <button type="submit" class="btn btn-sm btn-danger ">Eliminar</button>
+                            @csrf
+                            <input type="hidden" value="DELETE" name="_method">
+                            <button type="submit" class="btn btn-sm btn-danger ">Eliminar</button>
                             </form>
                                 <a type="submit" class="btn btn-sm btn-primary ml-1 " href="{{ route('productos.edit',[$producto->id])}}"> Editar</a>
                         </div>

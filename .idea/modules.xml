@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/laravelweb.iml" filepath="$PROJECT_DIR$/.idea/laravelweb.iml" />
+      <module fileurl="file://$USER_HOME$/OneDrive/Escritorio/paper-dashboard-master/.idea/paper-dashboard-master.iml" filepath="$USER_HOME$/OneDrive/Escritorio/paper-dashboard-master/.idea/paper-dashboard-master.iml" />
     </modules>
   </component>
 </project>
