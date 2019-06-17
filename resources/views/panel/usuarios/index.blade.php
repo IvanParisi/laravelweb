@@ -28,6 +28,7 @@
                                     <th>
                                         Status
                                     </th>
+
                                     <th class="text-right btn-success">
                                         Acciones
                                     </th>
@@ -44,19 +45,24 @@
                                         <td>
                                            @if($usuario->role_id == 1)
                                                <p class="text-danger">El Jefe de los Minisupers</p>
-                                            @else
+                                            @elseif($usuario->role_id == 2)
                                                 <p class="text-success">Plebe</p>
+                                               @else
+                                                <p class="text-warning">El Profe que pone 10</p>
                                             @endif
                                         </td>
-                                        @if($usuario->role_id == 2)
                                         <td class="text-right">
+                                        @if($usuario->role_id == 2)
                                             <form action="{{ route('usuarios.destroy',[$usuario->id])}} " method="POST">
                                                 @csrf
                                                 <input type="hidden" value="DELETE" name="_method">
                                                 <button type="submit" class="btn btn-sm btn-danger ">Eliminar</button>
                                             </form>
-                                        </td>
+                                            @elseif($usuario->role_id == 3)
+                                                <a type="submit" class="btn btn-sm btn-warning ml-1" href="https://dvcarreras.davinci.edu.ar/login.html">??????</a>
                                             @endif
+                                        </td>
+
 
                                     </tr>
                                         @empty
