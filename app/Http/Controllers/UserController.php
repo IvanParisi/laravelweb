@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+Use Redirect;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -91,4 +92,6 @@ class UserController extends Controller
         User::destroy($id);
         return redirect()->route("usuarios.index")->with('ok',"El plebeyo $nombre ha sido desterrado");
     }
+
+
 }

@@ -53,13 +53,13 @@
                                         </td>
                                         <td class="text-right">
                                         @if($usuario->role_id == 2)
-                                            <form action="{{ route('usuarios.destroy',[$usuario->id])}} " method="POST">
+                                            <form action="{{ route('usuarios.destroy',[$usuario->id])}}" method="POST">
                                                 @csrf
                                                 <input type="hidden" value="DELETE" name="_method">
                                                 <button type="submit" class="btn btn-sm btn-danger ">Eliminar</button>
                                             </form>
                                             @elseif($usuario->role_id == 3)
-                                                <a type="submit" class="btn btn-sm btn-warning ml-1" href="https://dvcarreras.davinci.edu.ar/login.html">??????</a>
+                                                <button type="submit" class="btn btn-sm btn-warning"><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">??????</a></button>
                                             @endif
                                         </td>
 

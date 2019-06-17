@@ -50,6 +50,7 @@
 
 
         Route::resource("/usuarios","UserController")->middleware('isAdmin');
+
         Route::resource("/productos","ProductosController")->middleware('isAdmin');
     });
 
