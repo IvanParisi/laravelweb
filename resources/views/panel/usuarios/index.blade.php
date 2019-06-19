@@ -43,22 +43,22 @@
                                             {{ $usuario->email }}
                                         </td>
                                         <td>
-                                           @if($usuario->role_id == 1)
+                                           @if($usuario->tipo_id == 1)
                                                <p class="text-danger">El Jefe de los Minisupers</p>
-                                            @elseif($usuario->role_id == 2)
+                                            @elseif($usuario->tipo_id == 2)
                                                 <p class="text-success">Plebe</p>
                                                @else
                                                 <p class="text-warning">El Profe que pone 10</p>
                                             @endif
                                         </td>
                                         <td class="text-right">
-                                        @if($usuario->role_id == 2)
+                                        @if($usuario->tipo_id == 2)
                                             <form action="{{ route('usuarios.destroy',[$usuario->id])}}" method="POST">
                                                 @csrf
                                                 <input type="hidden" value="DELETE" name="_method">
                                                 <button type="submit" class="btn btn-sm btn-danger ">Eliminar</button>
                                             </form>
-                                            @elseif($usuario->role_id == 3)
+                                            @elseif($usuario->tipo_id == 3)
                                                 <button type="submit" class="btn btn-sm btn-warning"><a href="https://www.youtube.com/watch?v=y6120QOlsfU" target="_blank">??????</a></button>
                                             @endif
                                         </td>

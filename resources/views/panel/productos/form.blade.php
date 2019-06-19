@@ -39,9 +39,15 @@
                             </div>
                             <div class="form-group">
                                 <label for="precio">Precio</label>
-                                <input type="number" name="precio" id="precio" min="100" class="form-control" id="precio" value="{{ isset($producto) ? $producto->precio : old('precio') }}">
+                                <input type="number" name="precio" min="100" class="form-control" id="precio" value="{{ isset($producto) ? $producto->precio : old('precio') }}">
 
                             </div>
+                                    <div class="form-group">
+                                        <label for="stock">Stock</label>
+                                        <input type="number" name="stock"  min="100" class="form-control" id="stock" value="{{ isset($producto) ? $producto->stock : old('stock') }}">
+
+                                    </div>
+
                             @isset($producto)
                             <div class="form-group">
                                 <p>Imagen</p>

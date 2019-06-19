@@ -29,6 +29,7 @@ class EditarRequest extends FormRequest
             "imagen" => "file|mimes:jpeg,png",
             "descripcion" => 'required|max:250',
             "precio" => "required|digits_between:3,4",
+            "stock" => "required|digits_between:3,4",
             "tipo_productos_id" => "required|exists:tipo_productos,id",
         ];
     }

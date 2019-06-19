@@ -1,4 +1,6 @@
-
+span.disable-links {
+    pointer-events: none;
+}
 .logo
 {
     font-family: 'Acme', sans-serif;

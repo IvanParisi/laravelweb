@@ -1,5 +1,5 @@
 @extends("web.template")
-
+<link rel="stylesheet" href="css/prt">
 @section("contenido")
 <div class="container margen">
 
@@ -21,9 +21,9 @@
 
                     <!-- Seccion perros -->
                 @foreach($listaProductos as $producto)
-                <div class="col-lg-4 col-md-6 mb-4">
+                <div class="col-lg-4 col-md-6 mb-4 card-group">
 
-                    <div class="card h-100">
+                    <div class="card h-100 ">
                         <a href="#"><img class="card-img-top" src="{{ $producto->imagen }}" alt=""></a>
                         <div class="card-body">
                             <h4 class="card-title">
@@ -35,6 +35,10 @@
                         </div>
                         <div class="card-footer">
                             <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                            <small>Stock: {{ $producto->stock }}</small>
+                            @if($producto->stock > 0)
+                            <input type="button" value="Comprar" class="float-right btn-success"  onclick='compra();'>
+                             @endif
                         </div>
                     </div>
                 </div>

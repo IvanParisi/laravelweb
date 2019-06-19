@@ -20,6 +20,8 @@
     <link href="css/shop-homepage.css" rel="stylesheet">
     <link rel="stylesheet" href="css/estilo.css">
     <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Ladda/0.9.8/ladda.min.css">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
 </head>
 
@@ -78,6 +80,7 @@
 
                             <a class="dropdown-item" href="{{ route('panel') }}">Ir al panel</a>
                         @endif
+
                         <a class="dropdown-item" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -90,6 +93,11 @@
 
                     </div>
                 </li>
+
+                    <li class="nav-item">
+                      <a href="" class="nav-link" onclick="lcompra()">Compras</a>
+                    </li>
+
                 </ul>
             @endguest
         </div>
@@ -115,8 +123,16 @@
 <!-- Bootstrap core JavaScript -->
 <script src="js/jquery/jquery.min.js"></script>
 <script src="js/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="js/compra.js"></script>
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js?ver=1.11.2'></script>
+<script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+<script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/Ladda/0.9.8/spin.min.js"></script>
+<script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/Ladda/0.9.8/ladda.min.js"></script>
+<script type='text/javascript' src="js/main.js"></script>
+
 
 </body>
 
 </html>
+
 

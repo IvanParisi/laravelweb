@@ -41,6 +41,11 @@ class User extends Authenticatable
 
     public function isAdmin()
     {
-        return $this->role_id === 1;
+        return $this->tipo_id === 1;
+    }
+
+    public function TipoCliente()
+    {
+        return $this->belongsTo(TipoUsuarios::class,'tipo_id');
     }
 }
