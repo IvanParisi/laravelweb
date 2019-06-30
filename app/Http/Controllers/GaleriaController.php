@@ -2,15 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Producto;
-use App\Models\TipoProducto;
+use App\User;
 use Illuminate\Http\Request;
-use mysql_xdevapi\Session;
-use App\Http\Requests\EditarRequest;
-use App\Http\Requests\ProductosRequest;
+use App\Models\Galeria;
 use Illuminate\Support\Facades\File;
 
-class ProductosController extends Controller
+class GaleriaController extends Controller
 {
     public function __construct()
     {
@@ -21,11 +18,15 @@ class ProductosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Producto $producto)
+    public function index()
     {
-        $productos = $producto->all();
-
-        return view('panel.productos.index',compact('productos'));
+        if(auth()->user()->name === "Admin"):
+        $fotos = Galeria::all();
+        else:
+        $id = auth()->user()->id;
+        $fotos = Galeria::all()->where("user_id", $id );
+        endif;
+        return view("web.tusfotos",compact('fotos'));
     }
 
     /**
@@ -33,31 +34,32 @@ class ProductosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(TipoProducto $tipoProducto)
+    public function create()
     {
-        $tipoProductos = $tipoProducto->all();
-
-        return view("panel.productos.form",compact("tipoProductos"));
+        return view("web.cargarfoto");
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\ProductosRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ProductosRequest $request)
+    public function store(Request $request)
     {
+        $id = auth()->user()->id;
         $datos = $request->all();
+        $datos["user_id"] = $id;
+
         if($request->hasFile('imagen')):
             $imagen = $request->file('imagen');
             $nombre = $datos["nombre"] . "." . $request->imagen->extension();
             $destino = public_path('/img');
             $imagen->move($destino,$nombre);
-            $datos["imagen"] =  "img/$nombre";
+            $datos["img"] =  "img/$nombre";
         endif;
-        if(Producto::create($datos)):
-            return redirect()->route("productos.index")->with("ok","Producto creado con exito");
+        if(Galeria::create($datos)):
+            return redirect()->route("web.galeria")->with("ok","Foto cargada con exito");
         else:
             return redirect()->back()->withInput()->withErrors("No se pudo cargar");
         endif;
@@ -82,32 +84,32 @@ class ProductosController extends Controller
      */
     public function edit($id)
     {
-       $tipoProductos = TipoProducto::all();
-       $producto = Producto::find($id);
-
-        return view("panel.productos.form",compact("producto","tipoProductos"));
+       $foto = Galeria::find($id);
+       return view("web.cargarfoto",compact("foto"));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\EditarRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(EditarRequest $request, $id)
+    public function update(Request $request, $id)
     {
-        $producto = Producto::find($id);
+        $foto = Galeria::find($id);
+        $id = auth()->user()->id;
         $datos = $request->all();
+        $datos["user_id"] = $id;
         if($request->hasFile('imagen')):
             $imagen = $request->file('imagen');
             $nombre = $datos["nombre"] . "." . $request->imagen->extension();
             $destino = public_path('/img');
             $imagen->move($destino,$nombre);
-            $datos["imagen"] =  "img/$nombre";
+            $datos["img"] =  "img/$nombre";
         endif;
-        if($producto->update($datos)):
-            return redirect()->route("productos.index")->with("ok","Se modifico correctamente");
+        if($foto->update($datos)):
+            return redirect()->route("cargarfoto.index")->with("ok","Se modifico correctamente");
         else:
             return redirect()->back()->withInput()->withErrors("Error al editar");
         endif;
@@ -120,10 +122,10 @@ class ProductosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-{
-    $img = Producto::find($id)->imagen;
-    File::delete($img);
-    Producto::destroy($id);
-    return redirect()->route("productos.index")->with('ok','Producto eliminado con exito');
-}
+    {
+       $img = Galeria::find($id)->img;
+        File::delete($img);
+        Galeria::destroy($id);
+        return redirect()->route("cargarfoto.index")->with('ok','Foto eliminada con exito!');
+    }
 }

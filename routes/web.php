@@ -31,6 +31,9 @@
         "uses" => "WebController@galeria"
     ]);
 
+
+    Route::resource("/cargarfoto","GaleriaController")->middleware('isLogin');
+
     Route::get("/registro",[
         "as"   => "web.register",
         "uses" => "WebController@register"

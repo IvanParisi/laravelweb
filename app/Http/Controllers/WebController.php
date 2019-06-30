@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
+use App\Models\Galeria;
 use App\Models\Producto;
+
 
 class WebController extends Controller
 {
@@ -19,7 +22,8 @@ class WebController extends Controller
     }
     public function galeria()
     {
-        return view("web.galeria");
+        $galeria = Galeria::all();
+        return view("web.galeria",compact('galeria'));
     }
     public function productos()
     {
@@ -35,6 +39,11 @@ class WebController extends Controller
     public function login()
     {
         return view ("web.login");
+    }
+
+    public function cargar()
+    {
+        return view ("web.cargarfoto");
     }
 
 }

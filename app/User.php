@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Models\Galeria;
 
 class User extends Authenticatable
 {
@@ -37,8 +38,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    const ADMIN_TYPE = '1';
-
     public function isAdmin()
     {
         return $this->tipo_id === 1;
@@ -47,5 +46,10 @@ class User extends Authenticatable
     public function TipoCliente()
     {
         return $this->belongsTo(TipoUsuarios::class,'tipo_id');
+    }
+
+    public function Galeria()
+    {
+      return $this->belongsTo(Galeria::class,'user_id');
     }
 }

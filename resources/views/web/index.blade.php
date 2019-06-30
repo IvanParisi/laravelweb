@@ -7,7 +7,7 @@
 @if(isset(Auth::user()->user))
 @if( Auth::user()->user  == 'Admin')
     @php
-    \Illuminate\Support\Facades\Redirect::to(  route(panel.index) );
+    \Illuminate\Support\Facades\Redirect::to(  route('panel') );
     @endphp
 @endif
 @endif

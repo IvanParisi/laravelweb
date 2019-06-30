@@ -16,9 +16,12 @@
                         </ul>
                     </div>
                 @endif
-                <h1 class="h3">Nuevo producto</h1>
-                <div class="row">
-
+                    @if(isset($producto))
+                        <h1 class="h3">Editar Producto</h1>
+                    @else
+                        <h1 class="h3">Nuevo Producto</h1>
+                    @endif
+                    <div class="row">
                     <div class="col-6 offset-3">
                         @if(isset($producto))
                         <form action="{{  route("productos.update",$producto->id)}}" enctype="multipart/form-data" method="POST" class="bg-light p-3">
@@ -71,8 +74,11 @@
 
                                 </select>
                             </div>
-
-                            <button type="submit" class="btn btn-primary mb-5">Crear</button>
+                                    @if(isset($producto))
+                                        <button type="submit" class="btn btn-primary mb-5">Editar</button>
+                                    @else
+                                        <button type="submit" class="btn btn-primary mb-5">Crear</button>
+                                    @endif
                         </form>
                     </div>
                 </div>

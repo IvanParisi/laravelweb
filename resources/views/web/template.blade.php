@@ -4,7 +4,7 @@
 
 <html lang="es">
 <head>
-
+    <base href="{{ asset("/") }}">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="ription" content="Venta de alimentos para mascotas">
@@ -78,8 +78,12 @@
 
                         @if(Auth::user()->name === 'Admin')
 
-                            <a class="dropdown-item" href="{{ route('panel') }}">Ir al panel</a>
+                            <a class="dropdown-item" href="{{ route('panel')}}">Ir al panel</a>
+                            <a class="dropdown-item" href="{{ route('cargarfoto.index')}}">Gestionar galeria</a>
+                        @else
+                            <a class="dropdown-item" href="{{ route('cargarfoto.index')}}">Galeria</a>
                         @endif
+
 
                         <a class="dropdown-item" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
