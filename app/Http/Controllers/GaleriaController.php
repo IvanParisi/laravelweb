@@ -6,6 +6,7 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Models\Galeria;
 use Illuminate\Support\Facades\File;
+use App\Http\Requests\GaleriaRequest;
 
 class GaleriaController extends Controller
 {
@@ -39,13 +40,14 @@ class GaleriaController extends Controller
         return view("web.cargarfoto");
     }
 
+
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(GaleriaRequest $request)
     {
         $id = auth()->user()->id;
         $datos = $request->all();
@@ -56,7 +58,7 @@ class GaleriaController extends Controller
             $nombre = $datos["nombre"] . "." . $request->imagen->extension();
             $destino = public_path('/img');
             $imagen->move($destino,$nombre);
-            $datos["img"] =  "img/$nombre";
+            $datos["imagen"] =  "img/$nombre";
         endif;
         if(Galeria::create($datos)):
             return redirect()->route("web.galeria")->with("ok","Foto cargada con exito");
@@ -95,7 +97,7 @@ class GaleriaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(GaleriaRequest $request, $id)
     {
         $foto = Galeria::find($id);
         $id = auth()->user()->id;
@@ -106,7 +108,7 @@ class GaleriaController extends Controller
             $nombre = $datos["nombre"] . "." . $request->imagen->extension();
             $destino = public_path('/img');
             $imagen->move($destino,$nombre);
-            $datos["img"] =  "img/$nombre";
+            $datos["imagen"] =  "img/$nombre";
         endif;
         if($foto->update($datos)):
             return redirect()->route("cargarfoto.index")->with("ok","Se modifico correctamente");

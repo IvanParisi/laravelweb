@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Galeria extends Model
 {
     protected $table = 'galeria';
-    protected $fillable = ["nombre","img","descripcion","user_id"];
+    protected $fillable = ["nombre","imagen","descripcion","user_id"];
 
     public function User()
     {

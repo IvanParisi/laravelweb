@@ -5,6 +5,7 @@
   <body class="fondo3">
     <div class="row margencar">
 
+        <div class="col-6 offset-3">
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -14,7 +15,6 @@
                 </ul>
             </div>
         @endif
-        <div class="col-6 offset-3">
             @if(isset($foto))
                 <form action="{{ route("cargarfoto.update",$foto->id) }}" enctype="multipart/form-data" method="POST" class="bg-light p-3">
                     @method("PUT")
@@ -35,7 +35,7 @@
                     @isset($foto)
                         <div class="form-group">
                             <p>Imagen</p>
-                            <img src="{{ $foto->img }}" alt="" width="120">
+                            <img src="{{ $foto->imagen }}" alt="" width="120">
                         </div>
                     @endisset
 

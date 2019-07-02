@@ -53,7 +53,7 @@
 
                     <div class="col-md-6 col-lg-4">
                         <div class="card border-0 transform-on-hover">
-                            <img src="{{ $items->img }}" alt="Card Image" class="card-img-top">
+                            <img src="{{ $items->imagen }}" alt="Card Image" class="card-img-top">
                             </a>
                             <div class="card-body">
                                 <h6>{{ $items->nombre }}</h6>

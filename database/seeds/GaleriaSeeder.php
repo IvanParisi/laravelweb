@@ -15,7 +15,7 @@ class GaleriaSeeder extends Seeder
             [
               'id' => "1",
               'nombre' => "Dogo",
-              'img' => 'img/dogo.jpg',
+              'imagen' => 'img/dogo.jpg',
               'descripcion' => "Es un perro muy lindo",
               'user_id' => 1,
 
@@ -23,7 +23,7 @@ class GaleriaSeeder extends Seeder
             [
                 'id' => "2",
                 'nombre' => "Felini",
-                'img' => 'img/felini.jpg',
+                'imagen' => 'img/felini.jpg',
                 'descripcion' => "Es un gato muy lindo",
                 'user_id' => 1,
 
@@ -31,7 +31,7 @@ class GaleriaSeeder extends Seeder
             [
                 'id' => "3",
                 'nombre' => "Kata",
-                'img' => 'img/kata.jpg',
+                'imagen' => 'img/kata.jpg',
                 'descripcion' => "Es una gata muy linda",
                 'user_id' => 1,
 

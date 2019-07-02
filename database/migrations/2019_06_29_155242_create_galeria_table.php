@@ -17,7 +17,7 @@ class CreateGaleriaTable extends Migration
         {
             $table->bigIncrements('id');
             $table->string('nombre',30);
-            $table->string('img',200);
+            $table->string('imagen',200);
             $table->string('descripcion',150);
             $table->unsignedBigInteger("user_id",false);
             $table->timestamps();

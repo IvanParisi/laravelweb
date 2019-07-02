@@ -45,7 +45,7 @@
                                         {{ $foto->descripcion }}
                                     </td>
                                     <td>
-                                        <img src="{{$foto->img}}" alt="{{$foto->nombre}}" width="50">
+                                        <img src="{{$foto->imagen}}" alt="{{$foto->nombre}}" width="50">
                                     </td>
                                     @if(auth()->user()->tipo_id === 1)
                                     <td>
