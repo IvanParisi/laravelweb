@@ -2,13 +2,14 @@
 
 @section('contenido')
 
-    @if(Session::has('ok'))
-        <p class="alert alert-success margen">{{ Session::get('ok') }}</p>
-    @endif
 
 
     <body id="fullscreen_bg" class="fondo2">
         <div class="container margen align-content-center">
+		
+    @if(Session::has('ok'))
+        <p class="alert alert-success margen">{{ Session::get('ok') }}</p>
+    @endif
             <body class="row">
                 <div class="col-md-12">
                     <div class="card ">
