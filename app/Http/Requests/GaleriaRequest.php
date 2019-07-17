@@ -25,7 +25,7 @@ class GaleriaRequest extends FormRequest
     {
         return
             [
-            "nombre" => "required|string|regex:[a-zA-Z ]",
+            "nombre" => "required|string|regex:/^[a-zA-Z ]*$/",
             "imagen" => "required|file|mimes:jpeg,png",
             "descripcion" => "required|max:200",
         ];
